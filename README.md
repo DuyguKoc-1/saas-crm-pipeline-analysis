@@ -55,3 +55,25 @@ FROM
 WHERE 
     Status = 'In-Pipeline' 
     AND Last_Contact_Date <= CURRENT_DATE - INTERVAL '3 days';
+
+'''
+
+---
+
+## 🌐 6. API & Integration Analysis
+
+When the automated background system updates a lead's status to 'Closed-Lost' (as defined in AC 4), it triggers an internal API integration to update related microservices and notify the sales ecosystem.
+
+### 🔹 API Contract: Lead Status Internal Update
+* **Endpoint:** `/api/v1/leads/{lead_id}/status`
+* **HTTP Method:** `PATCH` (Used for partial updates)
+* **Headers:** `Content-Type: application/json`
+
+### 📤 Request Payload (JSON)
+The automated system sends the following data structure to execute the status update:
+```json
+{
+  "status": "Closed-Lost",
+  "updated_by": "System_Automation_Cron",
+  "reason": "No interaction logged for 3 consecutive days"
+}
