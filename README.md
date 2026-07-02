@@ -77,3 +77,39 @@ The automated system sends the following data structure to execute the status up
   "updated_by": "System_Automation_Cron",
   "reason": "No interaction logged for 3 consecutive days"
 }
+'''
+---
+
+---
+
+## 🎨 7. UI/UX Wireframe & Dashboard Requirements
+
+To ensure sales representatives can take immediate action before the system automatically shifts a lead to 'Closed-Lost', the CRM user interface prioritizes high-risk items at the top of the daily task view.
+
+### 🖥️ Daily Task List: Priority Placement Rules
+* **⚠️ Top-of-Page Alert Band:** Leads with 3 days of inactivity must be dynamically pinned to the **very top** of the representative’s daily task list, appearing above their regularly scheduled daily tasks.
+* **🎨 Visual Treatment:** These high-risk tasks must be highlighted with a distinctive warning color (e.g., Red/Orange alert background) to immediately capture attention upon logging in.
+
+### 📊 Dashboard Widget: High-Risk Leads (Action Required)
+
+```text
++------------------------------------------------------------------------------------+
+| ⚠️ HIGH-RISK LEADS (Pinned to Top - Action Required within 24 Hours)       [View All] |
++------------------------------------------------------------------------------------+
+| Lead Name          | Pipeline Stage   | Inactivity Period | Quick Action           |
++--------------------+------------------+-------------------+------------------------+
+| Acme Corp          | Discovery        | 3 Days (Final)    | [Log Call] [Send Email]|
++------------------------------------------------------------------------------------+
+| [Normal Daily Tasks Continue Below This Line with Standard Visuals]                |
++------------------------------------------------------------------------------------+
+| Global Tech Inc    | Proposal Sent    | 2 Days            | [Log Call] [Send Email]|
+| Nexus Logistics    | Contract Review  | 2 Days            | [Log Call] [Send Email]|
++------------------------------------------------------------------------------------+
+'''
+### 🔔 System Notification & Modal Workflow (AC 2 & AC 3)
+1. **Trigger Condition:** As soon as a lead hits "3 Days" of no interaction, a real-time system alert badge appears on the representative's notification center.
+2. **Action Button:** Clicking the alert opens a focused Modal Window with the following elements:
+   * **Header:** `⚠️ Final Notice: Automated Pipeline Cleanup`
+   * **Body Text:** `The lead [Lead_Name] will be automatically marked as "Closed-Lost" at the end of the business day due to 3 days of inactivity.`
+   * **Primary CTA Button:** `[Log Immediate Interaction]` -> Opens the task logger sheet.
+   * **Secondary Button:** `[Postpone 24 Hours]` -> Requires a mandatory text input for justification.`
