@@ -105,7 +105,7 @@ To ensure sales representatives can take immediate action before the system auto
 | Global Tech Inc    | Proposal Sent    | 2 Days            | [Log Call] [Send Email]|
 | Nexus Logistics    | Contract Review  | 2 Days            | [Log Call] [Send Email]|
 +------------------------------------------------------------------------------------+
-'''
+```
 ### 🔔 System Notification & Modal Workflow (AC 2 & AC 3)
 1. **Trigger Condition:** As soon as a lead hits "3 Days" of no interaction, a real-time system alert badge appears on the representative's notification center.
 2. **Action Button:** Clicking the alert opens a focused Modal Window with the following elements:
